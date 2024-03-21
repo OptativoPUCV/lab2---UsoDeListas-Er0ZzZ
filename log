@@ -209,3 +209,61 @@ exercises.c:148:5: error: control reaches end of non-void function [-Werror=retu
 cc1: all warnings being treated as errors
 Compilation failed
 5d8a22d
+Thu 21 Mar 2024 08:32:08 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:130:3: error: expected ‘,’ or ‘;’ before ‘for’
+  130 |   for(int i = 0; cadena[i] != '\0'; i++) {
+      |   ^~~
+exercises.c:130:25: error: ‘i’ undeclared (first use in this function)
+  130 |   for(int i = 0; cadena[i] != '\0'; i++) {
+      |                         ^
+exercises.c:130:25: note: each undeclared identifier is reported only once for each function it appears in
+exercises.c:130:40: error: expected ‘;’ before ‘)’ token
+  130 |   for(int i = 0; cadena[i] != '\0'; i++) {
+      |                                        ^
+      |                                        ;
+exercises.c:130:40: error: expected statement before ‘)’ token
+exercises.c:135:18: error: passing argument 2 of ‘push’ makes pointer from integer without a cast [-Werror=int-conversion]
+  135 |       push(pila, elemento);
+      |                  ^~~~~~~~
+      |                  |
+      |                  char
+In file included from exercises.c:7,
+                 from test.c:5:
+stack.h:11:31: note: expected ‘void *’ but argument is of type ‘char’
+   11 | void push(Stack *stack, void *data) { pushFront(stack, data); }
+      |                         ~~~~~~^~~~
+In file included from test.c:5:
+exercises.c:137:10: error: implicit declaration of function ‘isEmpty’ [-Werror=implicit-function-declaration]
+  137 |       if(isEmpty(pila))
+      |          ^~~~~~~
+exercises.c:141:46: error: comparison between pointer and integer [-Werror]
+  141 |         if((elemento == ')' && elemento_pila == '(') || (elemento == ']' && elemento_pila == '[') || (elemento == '}' && elemento_pila == '{'))
+      |                                              ^~
+exercises.c:141:91: error: comparison between pointer and integer [-Werror]
+  141 |         if((elemento == ')' && elemento_pila == '(') || (elemento == ']' && elemento_pila == '[') || (elemento == '}' && elemento_pila == '{'))
+      |                                                                                           ^~
+In file included from test.c:5:
+exercises.c:141:136: error: comparison between pointer and integer [-Werror]
+  141 |         if((elemento == ')' && elemento_pila == '(') || (elemento == ']' && elemento_pila == '[') || (elemento == '}' && elemento_pila == '{'))
+      |                                                                                                                                        ^~
+exercises.c: At top level:
+exercises.c:149:3: error: expected identifier or ‘(’ before ‘}’ token
+  149 |   }
+      |   ^
+exercises.c:151:3: error: expected identifier or ‘(’ before ‘return’
+  151 |   return 1;
+      |   ^~~~~~
+exercises.c:152:1: error: expected identifier or ‘(’ before ‘}’ token
+  152 | }
+      | ^
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:148:5: error: control reaches end of non-void function [-Werror=return-type]
+  148 |     }
+      |     ^
+cc1: all warnings being treated as errors
+Compilation failed
+ba8e288
