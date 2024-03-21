@@ -4,3 +4,23 @@ Thu 21 Mar 2024 01:38:50 PM UTC:
  tests:  1|4
 total_score: 10/70
 dd9521e
+Thu 21 Mar 2024 01:57:44 PM UTC: 
+ exercises.c | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘sumaLista’:
+exercises.c:61:14: error: initialization of ‘int’ from ‘void *’ makes integer from pointer without a cast [-Werror=int-conversion]
+   61 |   int dato = first(L);
+      |              ^~~~~
+exercises.c:64:14: error: comparison between pointer and integer [-Werror]
+   64 |   while(dato != NULL)
+      |              ^~
+exercises.c:66:15: error: invalid type argument of unary ‘*’ (have ‘int’)
+   66 |       suma += *dato;
+      |               ^~~~~
+exercises.c:67:12: error: assignment to ‘int’ from ‘void *’ makes integer from pointer without a cast [-Werror=int-conversion]
+   67 |       dato = next(L);
+      |            ^
+cc1: all warnings being treated as errors
+Compilation failed
+fb7324e
