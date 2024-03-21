@@ -313,3 +313,35 @@ exercises.c:149:5: error: control reaches end of non-void function [-Werror=retu
 cc1: all warnings being treated as errors
 Compilation failed
 7555c24
+Thu 21 Mar 2024 08:33:34 PM UTC: 
+ exercises.c | 3 ---
+ 1 file changed, 3 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:136:18: error: passing argument 2 of ‘push’ makes pointer from integer without a cast [-Werror=int-conversion]
+  136 |       push(pila, elemento);
+      |                  ^~~~~~~~
+      |                  |
+      |                  char
+In file included from exercises.c:7,
+                 from test.c:5:
+stack.h:11:31: note: expected ‘void *’ but argument is of type ‘char’
+   11 | void push(Stack *stack, void *data) { pushFront(stack, data); }
+      |                         ~~~~~~^~~~
+In file included from test.c:5:
+exercises.c:138:10: error: implicit declaration of function ‘isEmpty’ [-Werror=implicit-function-declaration]
+  138 |       if(isEmpty(pila))
+      |          ^~~~~~~
+exercises.c:142:46: error: comparison between pointer and integer [-Werror]
+  142 |         if((elemento == ')' && elemento_pila == '(') || (elemento == ']' && elemento_pila == '[') || (elemento == '}' && elemento_pila == '{'))
+      |                                              ^~
+exercises.c:142:91: error: comparison between pointer and integer [-Werror]
+  142 |         if((elemento == ')' && elemento_pila == '(') || (elemento == ']' && elemento_pila == '[') || (elemento == '}' && elemento_pila == '{'))
+      |                                                                                           ^~
+In file included from test.c:5:
+exercises.c:142:136: error: comparison between pointer and integer [-Werror]
+  142 |         if((elemento == ')' && elemento_pila == '(') || (elemento == ']' && elemento_pila == '[') || (elemento == '}' && elemento_pila == '{'))
+      |                                                                                                                                        ^~
+cc1: all warnings being treated as errors
+Compilation failed
+7672ee3

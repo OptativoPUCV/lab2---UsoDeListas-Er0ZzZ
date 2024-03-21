@@ -127,7 +127,7 @@ int parentesisBalanceados(char *cadena)
 {
   Stack* pila = create_stack();
   int i;
-  
+
   for(i = 0; cadena[i] != '\0'; i++) {
 
     char elemento = cadena[i];
@@ -143,12 +143,9 @@ int parentesisBalanceados(char *cadena)
           pop(pila);
         else 
           return 0; 
-          } 
-        } 
       } 
     } 
-  } 
-
+  }
   return 1;
 }
 
