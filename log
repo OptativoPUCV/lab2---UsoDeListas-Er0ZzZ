@@ -48,3 +48,15 @@ Thu 21 Mar 2024 08:16:58 PM UTC:
  tests:  3|2
 total_score: 40/70
 380053b
+Thu 21 Mar 2024 08:18:54 PM UTC: 
+ exercises.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘copia_pila’:
+exercises.c:114:3: error: implicit declaration of function ‘free_stack’; did you mean ‘create_stack’? [-Werror=implicit-function-declaration]
+  114 |   free_stack(P3);
+      |   ^~~~~~~~~~
+      |   create_stack
+cc1: all warnings being treated as errors
+Compilation failed
+590c9b7
